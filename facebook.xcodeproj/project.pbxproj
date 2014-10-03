@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851C66B819DE5837003496E7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C66B719DE5837003496E7 /* PhotoViewController.swift */; };
 		856DD95B19CA80C900BBD258 /* StatusUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856DD95A19CA80C900BBD258 /* StatusUpdateViewController.swift */; };
 		856DD98B19CA871100BBD258 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856DD98A19CA871100BBD258 /* LogInViewController.swift */; };
 		8598AB6319C7DBBD00CE5DF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598AB6219C7DBBD00CE5DF2 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851C66B719DE5837003496E7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = facebook/PhotoViewController.swift; sourceTree = "<group>"; };
 		856DD95A19CA80C900BBD258 /* StatusUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUpdateViewController.swift; sourceTree = "<group>"; };
 		856DD98A19CA871100BBD258 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8598AB5D19C7DBBD00CE5DF2 /* facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 		8598AB5419C7DBBC00CE5DF2 = {
 			isa = PBXGroup;
 			children = (
+				851C66B719DE5837003496E7 /* PhotoViewController.swift */,
 				8598AB5F19C7DBBD00CE5DF2 /* facebook */,
 				8598AB7519C7DBBD00CE5DF2 /* facebookTests */,
 				8598AB5E19C7DBBD00CE5DF2 /* Products */,
@@ -246,6 +249,7 @@
 				8598AB8319C7E16300CE5DF2 /* NewsFeedViewController.swift in Sources */,
 				856DD98B19CA871100BBD258 /* LogInViewController.swift in Sources */,
 				8598AB8D19C7EC9100CE5DF2 /* DetailViewController.swift in Sources */,
+				851C66B819DE5837003496E7 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
