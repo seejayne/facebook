@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		851C66B719DE5837003496E7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoViewController.swift; path = facebook/PhotoViewController.swift; sourceTree = "<group>"; };
+		851C66B719DE5837003496E7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		856DD95A19CA80C900BBD258 /* StatusUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusUpdateViewController.swift; sourceTree = "<group>"; };
 		856DD98A19CA871100BBD258 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8598AB5D19C7DBBD00CE5DF2 /* facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +77,6 @@
 		8598AB5419C7DBBC00CE5DF2 = {
 			isa = PBXGroup;
 			children = (
-				851C66B719DE5837003496E7 /* PhotoViewController.swift */,
 				8598AB5F19C7DBBD00CE5DF2 /* facebook */,
 				8598AB7519C7DBBD00CE5DF2 /* facebookTests */,
 				8598AB5E19C7DBBD00CE5DF2 /* Products */,
@@ -96,6 +95,7 @@
 		8598AB5F19C7DBBD00CE5DF2 /* facebook */ = {
 			isa = PBXGroup;
 			children = (
+				851C66B719DE5837003496E7 /* PhotoViewController.swift */,
 				8598AB6219C7DBBD00CE5DF2 /* AppDelegate.swift */,
 				8598AB6419C7DBBD00CE5DF2 /* ViewController.swift */,
 				8598AB6619C7DBBD00CE5DF2 /* Main.storyboard */,

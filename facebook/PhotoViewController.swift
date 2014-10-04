@@ -17,12 +17,22 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
 
         imageView.image = image
-        // Do any additional setup after loading the view.
+        
+        imageView.hidden = true
+      
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        imageView.hidden = false
+    }
+    
     
     @IBAction func onDoneButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
+
     
     
     
