@@ -23,6 +23,11 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
     
     var imageViewToSegue : UIImageView!
     
+    var startPosition: CGPoint!
+    var endPosition: CGPoint!
+    
+    var startEndSize: CGSize!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = imageView.frame.size
@@ -53,7 +58,7 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
+        return 0.8
     }
     
     // actual animation happens in here
@@ -64,23 +69,39 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
         
         if (isPresenting) {
             
+            startPosition = imageViewToSegue.center
+            
             var window = UIApplication.sharedApplication().keyWindow
             var frame = window.convertRect(self.imageViewToSegue.frame, fromView: scrollView)
-            var copyImageView = UIImageView(frame: frame )
+            var copyImageView = UIImageView(frame: frame)
+            
             copyImageView.image = imageViewToSegue.image
+            copyImageView.frame.size = imageViewToSegue.frame.size
+            
             window.addSubview(copyImageView)
             
-            copyImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            copyImageView.contentMode = UIViewContentMode.ScaleAspectFill
+            copyImageView.clipsToBounds = true
+            
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
 
             // animate the copy
             
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.8, animations: { () -> Void in
                 
-                copyImageView.frame.size = CGSize(width: 320, height: 471)
-                copyImageView.frame.origin.x = 0
-                copyImageView.frame.origin.y = 53
+                copyImageView.frame.size.width = 320
+                
+                var ratio = (self.imageViewToSegue.image!.size.height) / (self.imageViewToSegue.image!.size.width)
+                
+                copyImageView.frame.size.height = 320 * ratio
+
+                copyImageView.center.x = 160
+                copyImageView.center.y = 290
+                
+                self.startEndSize = copyImageView.frame.size
+                self.endPosition = copyImageView.center
+
                 
                 toViewController.view.alpha = 1
                 
@@ -89,10 +110,40 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
                     transitionContext.completeTransition(true)
             }
         } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            
+            // add copy
+            var window = UIApplication.sharedApplication().keyWindow
+            var frame = window.convertRect(self.imageViewToSegue.frame, fromView: scrollView)
+            var copyImageView = UIImageView(frame: frame)
+            
+            copyImageView.image = imageViewToSegue.image
+            copyImageView.frame.size = startEndSize
+            copyImageView.center = endPosition
+
+            window.addSubview(copyImageView)
+            
+            copyImageView.contentMode = UIViewContentMode.ScaleAspectFill
+            copyImageView.clipsToBounds = true
+            
+            
+            // animate
+            UIView.animateWithDuration(0.8, animations: { () -> Void in
                 fromViewController.view.alpha = 0
+                
+
+                
+                copyImageView.frame.size.width = self.imageViewToSegue.frame.width
+                copyImageView.frame.size.height = self.imageViewToSegue.frame.height
+                
+                
+                copyImageView.center = CGPoint(x: self.startPosition.x , y: (self.startPosition.y + 109))
+                
+                
+                
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
+                    copyImageView.removeFromSuperview()
+
                     fromViewController.view.removeFromSuperview()
             }
         }
@@ -101,7 +152,12 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
 
     @IBAction func onTap(gestureRecognizer: UITapGestureRecognizer) {
         imageViewToSegue = gestureRecognizer.view as UIImageView
+        
+        println(imageViewToSegue.center)
+        
         performSegueWithIdentifier("photoSegue", sender: self)
+        
+        
   
 
         

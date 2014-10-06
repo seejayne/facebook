@@ -11,6 +11,7 @@ import UIKit
 class PhotoViewController: UIViewController {
     var image: UIImage!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
