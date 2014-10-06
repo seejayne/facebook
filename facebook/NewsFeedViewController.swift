@@ -58,7 +58,7 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.8
+        return 0.5
     }
     
     // actual animation happens in here
@@ -88,7 +88,7 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
 
             // animate the copy
             
-            UIView.animateWithDuration(0.8, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
                 
                 copyImageView.frame.size.width = 320
                 
@@ -127,7 +127,7 @@ class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDel
             
             
             // animate
-            UIView.animateWithDuration(0.8, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
                 fromViewController.view.alpha = 0
                 
 
