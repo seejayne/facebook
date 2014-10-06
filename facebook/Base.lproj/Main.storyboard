@@ -264,7 +264,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="cMq-Cs-k5I" id="whO-XJ-8Xq"/>
                         <outlet property="imageView" destination="ydc-te-iAx" id="rJc-CB-9eS"/>
+                        <outlet property="photoControls" destination="AMU-HZ-gQX" id="Coo-Dr-CHe"/>
                         <outlet property="scrollView" destination="bNs-FA-KYw" id="Xu8-EQ-yAJ"/>
                     </connections>
                 </viewController>
